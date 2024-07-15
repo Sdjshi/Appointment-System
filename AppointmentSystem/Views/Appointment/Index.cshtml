@@ -1,0 +1,85 @@
+﻿
+
+@using AppointmentData.Models;
+@model IEnumerable<Service>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+@{
+    ViewData["Title"] = "Services";
+}
+
+<div class="container">
+    <div class="row" id="serviceProvidersContainer">
+        @foreach (var service in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@service.ServiceName</h5>
+                        <p class="card-text">@service.Description</p>
+                        <p class="card-text">Duration: @service.Duration minutes</p>
+                        <p class="card-text">MSP: NPR @service.MSP</p>
+                        <p class="card-text">MRP: NPR @service.MRP</p>
+                        <button type="button" class="btn btn-primary select-provider" data-service-id="@service.ServiceID">Select Service Provider</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.select-provider').click(function () {
+                var serviceId = $(this).data('service-id');
+                $.ajax({
+                    url: '/ServiceProvider/GetServiceAssignedServiceProvidersWithSlots',
+                    type: 'GET',
+                    data: { serviceId: serviceId },
+                    success: function (data) {
+                        displayServiceProviders(data);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+
+            $(document).on('click', '.book-appointment', function () {
+                var serviceId = $(this).data('service-id');
+                var serviceProviderId = $(this).data('service-provider-id');
+                window.location.href = '/Appointment/BookAppointment?serviceId=' + serviceId + '&serviceProviderId=' + serviceProviderId;
+            });
+
+            function displayServiceProviders(serviceProviders) {
+                var container = $('#serviceProvidersContainer');
+                container.empty();
+                $.each(serviceProviders, function (index, serviceProvider) {
+                    var card = '<div class="col-md-4 mb-4">' +
+                        '<div class="card">' +
+                        '<div class="card-body">' +
+                        '<h5 class="card-title">Service Provider: ' + serviceProvider.serviceProviderName + '</h5>' +
+                        '<p class="card-text"><strong>Address:</strong> ' + (serviceProvider.serviceProviderAddress ? serviceProvider.serviceProviderAddress : '') + '</p>' +
+                        '<p class="card-text"><strong>Phone:</strong> ' + (serviceProvider.serviceProviderPhone ? serviceProvider.serviceProviderPhone : '') + '</p>' +
+                        '<p class="card-text"><strong>Email:</strong> ' + (serviceProvider.serviceProviderEmail ? serviceProvider.serviceProviderEmail : '') + '</p>' +
+                        '<p class="card-text"><strong>Facebook:</strong> ' + (serviceProvider.serviceProviderFacebookLink ? serviceProvider.serviceProviderFacebookLink : '') + '</p>' +
+                        '<p class="card-text"><strong>Viber:</strong> ' + (serviceProvider.serviceProviderViber ? serviceProvider.serviceProviderViber : '') + '</p>' +
+                        '<p class="card-text"><strong>Whatsapp:</strong> ' + (serviceProvider.serviceProviderWhatsapp ? serviceProvider.serviceProviderWhatsapp : '') + '</p>' +
+                        '</div>' +
+                        '<div class="card-footer">' +
+                        '<button type="button" class="btn btn-primary book-appointment" data-service-id="' + serviceProvider.serviceID + '" data-service-provider-id="' + serviceProvider.serviceProviderID + '">Book Appointment</button>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                    container.append(card);
+                });
+            }
+        });
+    </script>
+}
+
+
+
+

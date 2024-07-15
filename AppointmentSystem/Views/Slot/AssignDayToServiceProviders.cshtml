@@ -1,0 +1,41 @@
+﻿@model AppointmentData.Models.AssignServiceModel
+
+<form action="@Url.Action("SaveWorkSchedule", "ServiceProvider")" method="post">
+    <div class="form-group">
+        <label for="serviceProviderId">Select Service Provider:</label>
+        @Html.DropDownListFor(model => model.ServiceProviderID, new SelectList(Model.ServiceProviders, "ServiceProviderID", "ServiceProviderName"), "Select a Service Provider", new { @class = "form-control", required = "required" })
+    </div>
+    <div class="form-group">
+        <label>Working Days:</label><br />
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="sunday" name="workingDays" value="Sunday" class="form-check-input"@* @(Model.ExistingWorkingDays.Contains("Sunday") ? "checked" : "")*@ />
+            <label for="sunday" class="form-check-label">Sunday</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="monday" name="workingDays" value="Monday" class="form-check-input" @*@(Model.ExistingWorkingDays.Contains("Monday") ? "checked" : "")*@ />
+            <label for="monday" class="form-check-label">Monday</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="tuesday" name="workingDays" value="Tuesday" class="form-check-input" @*@(Model.ExistingWorkingDays.Contains("Tuesday") ? "checked" : "")*@ />
+            <label for="tuesday" class="form-check-label">Tuesday</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="wednesday" name="workingDays" value="Wednesday" class="form-check-input" @*@(Model.ExistingWorkingDays.Contains("Wednesday") ? "checked" : "")*@ />
+            <label for="wednesday" class="form-check-label">Wednesday</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="thursday" name="workingDays" value="Thursday" class="form-check-input" @*@(Model.ExistingWorkingDays.Contains("Thursday") ? "checked" : "")*@ />
+            <label for="thursday" class="form-check-label">Thursday</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="friday" name="workingDays" value="Friday" class="form-check-input" @*@(Model.ExistingWorkingDays.Contains("Friday") ? "checked" : "") *@/>
+            <label for="friday" class="form-check-label">Friday</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="saturday" name="workingDays" value="Saturday" class="form-check-input" @*@(Model.ExistingWorkingDays.Contains("Saturday") ? "checked" : "") *@/>
+            <label for="saturday" class="form-check-label">Saturday</label>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

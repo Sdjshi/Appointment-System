@@ -1,0 +1,123 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AppointmentSystem
+build_property.RootNamespace = AppointmentSystem
+build_property.ProjectDir = F:\Projects\Desktop Projects\Appointment_System\AppointmentSystem\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = F:\Projects\Desktop Projects\Appointment_System\AppointmentSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Account/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Appointment/BookAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQm9va0FwcG9pbnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Appointment/ConfirmAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQ29uZmlybUFwcG9pbnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Appointment/GetAllAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcR2V0QWxsQXBwb2ludG1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Appointment/GetMyAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcR2V0TXlBcHBvaW50bWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Appointment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Customer/GetAllCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcR2V0QWxsQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Home/TestIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXN0SW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/PortalForServiceProvider/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGFsRm9yU2VydmljZVByb3ZpZGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/PortalForServiceProvider/TestIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGFsRm9yU2VydmljZVByb3ZpZGVyXFRlc3RJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/ServiceProvider/GetServiceProviders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVByb3ZpZGVyXEdldFNlcnZpY2VQcm92aWRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Service/AssignService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBc3NpZ25TZXJ2aWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Service/GetAssignedService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxHZXRBc3NpZ25lZFNlcnZpY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Service/GetService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxHZXRTZXJ2aWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Slot/AssignDayToServiceProviders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xvdFxBc3NpZ25EYXlUb1NlcnZpY2VQcm92aWRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Slot/AssignSlot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xvdFxBc3NpZ25TbG90LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Slot/GetAllSlots.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xvdFxHZXRBbGxTbG90cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Slot/GetAssignedSlot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2xvdFxHZXRBc3NpZ25lZFNsb3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Projects/Desktop Projects/Appointment_System/AppointmentSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-u6m4o4b1n6

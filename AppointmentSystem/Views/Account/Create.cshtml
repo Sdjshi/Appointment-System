@@ -1,0 +1,126 @@
+﻿
+
+<form method="post" id="createAccountForm">
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label for="role">Role:</label>
+        <select id="role" name="role" class="form-control" required>
+        </select>
+    </div>
+
+    <div id="serviceProviderContainer" class="form-group" style="display: none;">
+        <label for="serviceProvider">Service Provider:</label>
+        <select id="serviceProvider" name="serviceProvider" class="form-control">
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Account</button>
+</form>
+
+<div id="successMessage" class="alert alert-success" style="display: none;">
+    Account created successfully!
+</div>
+<div id="errorMessage" class="alert alert-danger" style="display: none;">
+    Failed to create user account.
+</div>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Account/GetRoles',
+            type: 'GET',
+            success: function (roles) {
+                var dropdown = $('#role');
+
+                dropdown.append($('<option disabled selected value="">Select Roles</option>'));
+
+                $.each(roles, function (index, role) {
+                    dropdown.append($('<option></option>').val(role.roleId).text(role.roleName));
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching roles:', error);
+            }
+        });
+
+        $('#role').change(function () {
+            var selectedRole = $(this).val();
+            if (selectedRole === '1') {
+                $('#serviceProvider').val('0');
+                $('#serviceProviderContainer').hide();
+            } else {
+                $('#serviceProviderContainer').show();
+                $.ajax({
+                    url: '/Account/GetServiceProviders',
+                    type: 'GET',
+                    success: function (serviceProviders) {
+                        var dropdown = $('#serviceProvider');
+                        dropdown.empty();
+
+                        $.each(serviceProviders, function (index, serviceProvider) {
+                            dropdown.append($('<option></option>').val(serviceProvider.serviceProviderID).text(serviceProvider.serviceProviderName));
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error fetching service providers:', error);
+                    }
+                });
+            }
+        });
+
+        $('#createAccountForm').submit(function (e) {
+            e.preventDefault();
+            var formData = $(this).serialize();
+            formData += '&RoleId=' + $('#role').val();
+            formData += '&ServiceProviderID=' + $('#serviceProvider').val();
+
+            $.ajax({
+                url: '/Account/Create',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        $('#successMessage').text(response.message).show();
+                        $('#errorMessage').hide();
+                    } else {
+                        $('#errorMessage').text(response.message).show();
+                        $('#successMessage').hide();
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $('#errorMessage').text('Error creating account: ' + error).show();
+                    $('#successMessage').hide();
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000);
+                }
+            });
+        });
+
+        $('#serviceProvider').change(function () {
+            var selectedServiceProviderId = $(this).val();
+            $.ajax({
+                url: '/Account/GetServiceProviderEmail',
+                type: 'GET',
+                data: { serviceProviderId: selectedServiceProviderId },
+                success: function (email) {
+                    $('#username').val(email);
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error fetching service provider email:', error);
+                }
+            });
+        });
+    });
+</script>
+
+
+

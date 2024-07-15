@@ -1,0 +1,78 @@
+﻿@model AppointmentData.Models.AssignSlotModel
+
+@{
+    ViewData["Title"] = "Assign Slot";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                Assign Slot
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("AssignSlot", "Slot", FormMethod.Post))
+                {
+                   
+                    <div class="form-group">
+                        <label for="SlotId">Select Slot:</label>
+                        @Html.DropDownListFor(model => model.SlotId, new SelectList(Model.SlotModels.Select(s => new { Id = s.SlotId, Name = $"{s.SlotName} ({s.StartTime.ToString("hh\\:mm")} - {s.EndTime.ToString("hh\\:mm")})" }), "Id", "Name"), "Select Slot", new { @class = "form-control", id = "SlotId" })
+                        @Html.ValidationMessageFor(model => model.SlotId, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Service Providers:</label>
+                        <div id="serviceProviders">
+                            @foreach (var serviceProvider in Model.ServiceProviders)
+                            {
+                                <div class="form-check">
+                                    <input type="checkbox" name="SelectedServiceProviderIds" id="@($"serviceProvider_{serviceProvider.ServiceProviderID}")" value="@serviceProvider.ServiceProviderID" class="form-check-input">
+                                    <label class="form-check-label" for="@($"serviceProvider_{serviceProvider.ServiceProviderID}")">@serviceProvider.ServiceProviderName</label>
+                                </div>
+                            }
+                        </div>
+                        @Html.ValidationMessageFor(model => model.SelectedServiceProviderIds, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mt-3">Assign Slot</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#SlotId').change(function () {
+                var selectedSlotId = $(this).val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '/ServiceProvider/GetSlotAssignedServiceProviderID',
+                    data: { slotId: selectedSlotId },
+                    success: function (response) {
+                        $('#serviceProviders input[type="checkbox"]').prop('disabled', false); 
+                        response.forEach(function (serviceProviderId) {
+                            $('#serviceProvider_' + serviceProviderId).prop('disabled', true); 
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error fetching assigned service providers:', error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

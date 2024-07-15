@@ -1,0 +1,181 @@
+﻿@using System.Security.Claims;
+@{
+    ViewData["Title"] = "Home Page";
+    var userIdClaim = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+    var userId = userIdClaim != null ? userIdClaim.Value : "N/A";
+    var username = User.Identity.Name;
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] Portal</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+            padding-top: 56px;
+            background-color: #1E293B;
+            width: 220px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            transition: width 0.3s;
+        }
+
+
+
+        #content {
+            margin-top: 56px;
+            padding-top: 20px;
+        }
+
+        .container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        #sidebar.active {
+            width: 60px;
+        }
+
+        #content.active {
+            margin-left: 60px;
+        }
+
+        .collapse-button {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #sidebar .nav-link {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Appointment System</a>
+
+        
+        <div class="navbar-nav ml-auto">
+            <span class="navbar-text mr-3">Hello, @username</span>
+            
+        </div> 
+        <div class="navbar-nav ml-auto">
+            <a href="/Account/Logout">Logout</a>
+            
+        </div>
+        
+        <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+
+                <li class="nav-item collapse-button">
+                    <button class="btn btn-link" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-controller="#" data-action="#"onclick="getMyAppointments('@userId')">Get My Appointments</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-controller="PortalForServiceProvider" data-action="TestIndex" >Test Index</a>
+                </li>
+
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-controller="PortalForServiceProvider" data-action="TestIndex" data-toggle="collapse" data-target="#submenu1">Submenu 1</a>
+                    <ul id="submenu1" class="collapse">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Submenu Item 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Submenu Item 2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  data-toggle="collapse" data-target="#submenu2">Submenu 2</a>
+                    <ul id="submenu2" class="collapse">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Submenu Item 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Submenu Item 2</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div id="content" class="container-fluid">
+
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div id="alertMessage" class="alert alert-info" role="alert">
+                @ViewBag.Message
+            </div>
+        }
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+            
+            $('.nav-link').click(function (e) {
+                e.preventDefault();
+                var controller = $(this).data('controller');
+                var action = $(this).data('action');
+
+
+                $.get('/' + controller + '/' + action, function (data) {
+
+                    $('#content').html(data);
+                });
+            });
+        });
+
+        function getMyAppointments(userId) {
+            console.log('getMyAppointments function is triggered with userId:', userId);
+            $.get('/Appointment/GetMyAppointments', { userId: userId }, function (data) {
+                
+                $('#content').html(data);
+            }).fail(function (xhr, status, error) {
+                
+                console.error('Failed to get appointments:', error);
+            });
+        }
+
+
+        function toggleSidebar() {
+            $('#sidebar').toggleClass('active');
+            $('#content').toggleClass('active');
+        }
+    </script>
+</body>
+</html>

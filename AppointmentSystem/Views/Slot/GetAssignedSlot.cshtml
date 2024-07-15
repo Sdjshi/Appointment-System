@@ -1,0 +1,67 @@
+﻿@model AppointmentData.Models.AssignSlotModel
+<div class="form-group">
+    <label for="SlotId">Select Slot:</label>
+    @Html.DropDownListFor(model => model.SlotId, new SelectList(Model.SlotModels.Select(s => new { Id = s.SlotId, Name = $"{s.SlotName} ({s.StartTime.ToString("hh\\:mm")} - {s.EndTime.ToString("hh\\:mm")})" }), "Id", "Name"), "Select Slot", new { @class = "form-control", id = "SlotId" })
+    @Html.ValidationMessageFor(model => model.SlotId, "", new { @class = "text-danger" })
+</div>
+
+<table id="serviceProviderTable" class="table">
+    <!-- Table content will be dynamically generated here -->
+</table>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#SlotId').change(function () {
+            
+            var slotId = $(this).val();
+
+            console.log("In the moment of SlotID",slotId);
+            if (slotId) {
+                $.ajax({
+                    url: '/ServiceProvider/GetSlotAssignedServiceProviders',
+                    type: 'GET',
+                    data: { SlotId: slotId },
+                    success: function (data) {
+                        var serviceProviderTable = $('#serviceProviderTable');
+                        serviceProviderTable.empty();
+                      
+                        var tableHtml = '<thead><tr><th>Service Provider Name</th><th>Service Provider Phone</th><th>Action</th></tr></thead><tbody>';
+                        $.each(data, function (index, item) {
+                            
+                            tableHtml += '<tr><td>' + item.serviceProviderName + '</td><td>' + item.serviceProviderPhone + '</td><td><button class="unassignBtn btn btn-danger" data-slot-id="' + item.slotID + '" data-provider-id="' + item.serviceProviderID + '">Unassign</button></td></tr>';
+                        });
+                        tableHtml += '</tbody>';
+                        serviceProviderTable.html(tableHtml); 
+
+                        
+                        $('.unassignBtn').click(function () {
+                            console.log("Unassigning for SlotID", slotId);
+                            var providerId = $(this).data('provider-id');
+                            $.ajax({
+                                url: '/Slot/UnassignSlotToServiceProvider',
+                                type: 'POST',
+                                data: { slotId: slotId, providerId: providerId },
+                                success: function (response) {
+                                   
+                                    location.reload(true);
+                                   
+
+                                },
+                                error: function (xhr, status, error) {
+                                    console.error('Error unassigning service provider:', error);
+                                }
+                            });
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error fetching service providers:', error);
+                    }
+                });
+            }
+        });
+    });
+
+
+</script>

@@ -1,0 +1,260 @@
+﻿@model IEnumerable<AppointmentData.Models.SlotModel>
+
+@{
+    ViewData["Title"] = "Slots";
+}
+<script src="~/js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#dvshow").click(function () {
+            $("#dvCreate").show();
+            $("#dvshow").hide();
+        });
+
+        $("#dvhideAdd").click(function () {
+            $("#dvCreate").hide();
+            $("#dvshow").show();
+        });
+
+        $("#dvhideEdit").click(function () {
+            $("#dvEdit").hide();
+            $("#dvshow").show();
+        });
+    });
+
+    function fnSaveData() {
+
+        $.ajax({
+            type: "POST",
+            url: '/Slot/CreateSlot',
+            data: {
+                'SlotId': $("#txtSlotId_Add").val(),
+                'SlotName': $("#txtSlotName_Add").val(),
+                'StartTime': $("#txtStartTime_Add").val(),
+                'EndTime': $("#txtEndTime_Add").val(),
+               
+            },
+            success: function (response) {
+                $("#dvCreate").hide();
+                $("#dvshow").hide();
+                location.reload(true);
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnEditSlot() {
+
+        $.ajax({
+            type: "POST",
+            url: '/Slot/EditSlot',
+            data: {
+                'SlotId': $("#txtSlotId_Edit").val(),
+                'SlotName': $("#txtSlotName_Edit").val(),
+                'StartTime': $("#txtStartTime_Edit").val(),
+                'EndTime': $("#txtEndTime_Edit").val(),
+               
+
+            },
+            success: function (response) {
+                $("#dvEdit").hide();
+                $("#dvshow").hide();
+                location.reload(true);
+                
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnEdit(SlotId) {
+        console.log('Editing item with Id:', SlotId);
+        $.ajax({
+            type: "POST",
+            url: '/Slot/GetSlotsById',
+            data: {
+                'SlotId': SlotId
+            },
+            success: function (response) {
+                $("#dvEdit").show();
+                $("#dvshow").hide();
+                $("#txtSlotId_Edit").val(response.slotId);
+                $("#txtSlotName_Edit").val(response.slotName);
+                $("#txtStartTime_Edit").val(response.startTime);
+                $("#txtEndTime_Edit").val(response.endTime);
+                
+
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnDelete(SlotId) {
+        console.log('Deleting item with Id:', SlotId);
+        $.ajax({
+            type: "POST",
+            url: '/Slot/StatusDeleteSlot',
+            data: {
+                'SlotId': SlotId
+            },
+            success: function (response) {
+                location.reload(true);
+            },
+            error: function (req, status, error) { }
+        });
+    }
+</script>
+
+<h1>Services Index</h1>
+<a href="javascript:void(0)" id="dvshow" class="btn btn-primary">Add Slots</a>
+
+<div id="dvEdit" style="display:none">
+    <div class="container">
+        
+        
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">SlotId</div>
+            <div class="col-md-9">
+                <input type="number" id="txtSlotId_Edit" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">SlotName</div>
+            <div class="col-md-9">
+                <input type="text" id="txtSlotName_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">StartTime</div>
+            <div class="col-md-9">
+                <input type="time" id="txtStartTime_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">EndTime</div>
+            <div class="col-md-9">
+                <input type="time" id="txtEndTime_Edit" class="form-control" />
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+            <input type="submit" value="Update" onclick="fnEditSlot()" class="btn btn-warning" />
+                <a href="javascript:void(0)" id="dvhideEdit" class="btn btn-danger">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvCreate" style="display:none">
+    <div class="container">
+        
+        <div class="row mb-3">
+            <div class="col-md-3">SlotId</div>
+            <div class="col-md-9">
+                <input type="number" id="txtSlotId_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">SlotName</div>
+            <div class="col-md-9">
+                <input type="text" id="txtSlotName_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">StartTime</div>
+            <div class="col-md-9">
+                <input type="time" id="txtStartTime_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">EndTime</div>
+            <div class="col-md-9">
+                <input type="time" id="txtEndTime_Add" class="form-control" />
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <input type="submit" value="Save" onclick="fnSaveData()" class="btn btn-primary" />
+                <a href="javascript:void(0)" id="dvhideAdd" class="btn btn-danger">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.SlotId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SlotName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.SlotId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SlotName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+                
+                <td>
+                    <a href="javascript:void(0)" class="btn btn-secondary" onclick="return fnEdit('@item.SlotId')">Edit</a>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#sdj_@item.SlotId">
+                        Details
+                    </button>
+                    <div class="modal fade" id="sdj_@item.SlotId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">@item.SlotName</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                    SlotId: @item.SlotId<br>
+                                    SlotName: @item.SlotName<br>
+                                    StartTime: @item.StartTime<br>
+                                    EndTime: @item.EndTime<br>
+                                   
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="btn btn-danger" onclick="return fnDelete('@item.SlotId')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

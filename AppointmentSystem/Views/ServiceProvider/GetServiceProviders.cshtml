@@ -1,0 +1,380 @@
+﻿@model IEnumerable<AppointmentData.Models.ServiceProviders>
+
+@{
+    ViewData["Title"] = "Slots";
+}
+<script src="~/js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#dvshow").click(function () {
+            $("#dvCreate").show();
+            $("#dvshow").hide();
+        });
+
+        $("#dvhideAdd").click(function () {
+            $("#dvCreate").hide();
+            $("#dvshow").show();
+        });
+
+        $("#dvhideEdit").click(function () {
+            $("#dvEdit").hide();
+            $("#dvshow").show();
+        });
+    });
+
+    function fnSaveData() {
+
+        $.ajax({
+            type: "POST",
+            url: '/ServiceProvider/CreateServiceProvider',
+            data: {
+                'ServiceProviderID': $("#txtServiceProviderID_Add").val(),
+                'ServiceProviderName': $("#txtServiceProviderName_Add").val(),
+                'ServiceProviderAddress': $("#txtServiceProviderAddress_Add").val(),
+                'ServiceProviderPhone': $("#txtServiceProviderPhone_Add").val(),
+                'ServiceProviderEmail': $("#txtServiceProviderEmail_Add").val(),
+                'ServiceProviderFacebookLink': $("#txtServiceProviderFacebookLink_Add").val(),
+                'ServiceProviderViber': $("#txtServiceProviderViber_Add").val(),
+                'ServiceProviderWhatsapp': $("#txtServiceProviderWhatsapp_Add").val(),
+                'OfficeId': $("#txtOfficeId_Add").val(),
+
+            },
+            success: function (response) {
+                $("#dvCreate").hide();
+                $("#dvshow").hide();
+                location.reload(true);
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnEditServiceProvider() {
+
+        $.ajax({
+            type: "POST",
+            url: '/ServiceProvider/EditServiceProvider',
+            data: {
+                'ServiceProviderID': $("#txtServiceProviderID_Edit").val(),
+                'ServiceProviderName': $("#txtServiceProviderName_Edit").val(),
+                'ServiceProviderAddress': $("#txtServiceProviderAddress_Edit").val(),
+                'ServiceProviderPhone': $("#txtServiceProviderPhone_Edit").val(),
+                'ServiceProviderEmail': $("#txtServiceProviderEmail_Edit").val(),
+                'ServiceProviderFacebookLink': $("#txtServiceProviderFacebookLink_Edit").val(),
+                'ServiceProviderViber': $("#txtServiceProviderViber_Edit").val(),
+                'ServiceProviderWhatsapp': $("#txtServiceProviderWhatsapp_Edit").val(),
+
+
+            },
+            success: function (response) {
+                $("#dvEdit").hide();
+                $("#dvshow").hide();
+                location.reload(true);
+
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnEdit(ServiceProviderID) {
+        console.log('Editing item with Id:', ServiceProviderID);
+        $.ajax({
+            type: "POST",
+            url: '/ServiceProvider/GetServiceProviderDetailsById',
+            data: {
+                'ServiceProviderID': ServiceProviderID
+            },
+            success: function (response) {
+                $("#dvEdit").show();
+                $("#dvshow").hide();
+                $("#txtServiceProviderID_Edit").val(response.serviceProviderID);
+                $("#txtServiceProviderName_Edit").val(response.serviceProviderName);
+                $("#txtServiceProviderAddress_Edit").val(response.serviceProviderAddress);
+                $("#txtServiceProviderPhone_Edit").val(response.serviceProviderPhone);
+                $("#txtServiceProviderEmail_Edit").val(response.serviceProviderEmail);
+                $("#txtServiceProviderFacebookLink_Edit").val(response.serviceProviderFacebookLink);
+                $("#txtServiceProviderViber_Edit").val(response.serviceProviderViber);
+                $("#txtServiceProviderWhatsapp_Edit").val(response.serviceProviderWhatsapp);
+                $("#txtCreatedDate_Edit").val(response.createdDate);
+                $("#txtModifiedDate_Edit").val(response.modifiesDate);
+                $("#txtOfficeId_Edit").val(response.officeId);
+
+
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnDelete(ServiceProviderID) {
+        console.log('Deleting item with Id:', ServiceProviderID);
+        $.ajax({
+            type: "POST",
+            url: '/ServiceProvider/DeleteServiceProvider',
+            data: {
+                'ServiceProviderID': ServiceProviderID
+            },
+            success: function (response) {
+                location.reload(true);
+            },
+            error: function (req, status, error) { }
+        });
+    }
+</script>
+
+<h1>Services Index</h1>
+<a href="javascript:void(0)" id="dvshow" class="btn btn-primary">Add Slots</a>
+
+<div id="dvEdit" style="display:none">
+    <div class="container">
+
+        <input type="datetime" id="txtCreatedDate_Edit" class="form-control" hidden />
+        <input type="datetime" id="txtModifiedDate_Edit" class="form-control" hidden />
+        <div class="row mb-3">
+            <div class="col-md-3">OfficeId</div>
+            <div class="col-md-9">
+                <input type="number" id="txtOfficeId_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderID</div>
+            <div class="col-md-9">
+                <input type="number" id="txtServiceProviderID_Edit" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderName</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderName_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderAddress</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderAddress_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderPhone</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderPhone_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderEmail</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderEmail_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderFacebookLink</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderFacebookLink_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderViber</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderViber_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderWhatsapp</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderWhatsapp_Edit" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <input type="submit" value="Update" onclick="fnEditServiceProvider()" class="btn btn-warning" />
+                <a href="javascript:void(0)" id="dvhideEdit" class="btn btn-danger">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvCreate" style="display:none">
+    <div class="container">
+
+        <div class="row mb-3">
+            <div class="col-md-3">OfficeId</div>
+            <div class="col-md-9">
+                <input type="number" id="txtOfficeId_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderID</div>
+            <div class="col-md-9">
+                <input type="number" id="txtServiceProviderID_Add" class="form-control" readonly />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderName</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderName_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderAddress</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderAddress_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderPhone</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderPhone_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderEmail</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderEmail_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderFacebookLink</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderFacebookLink_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderViber</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderViber_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceProviderWhatsapp</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceProviderWhatsapp_Add" class="form-control" />
+            </div>
+        </div>
+
+
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <input type="submit" value="Save" onclick="fnSaveData()" class="btn btn-primary" />
+                <a href="javascript:void(0)" id="dvhideAdd" class="btn btn-danger">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+                OfficeId
+            </th>
+            <th>
+
+                ID
+            </th>
+            <th>
+
+                Name
+            </th>
+            <th>
+
+                Address
+            </th>
+            <th>
+
+                Phone
+            </th>
+            <th>
+
+                Email
+            </th>
+            <th>
+
+                Facebook
+            </th>
+            <th>
+
+                Viber
+            </th>
+            <th>
+
+                Whatsapp
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfficeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderFacebookLink)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderViber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderWhatsapp)
+                </td>
+
+                <td>
+                    <a href="javascript:void(0)" class="btn btn-secondary" onclick="return fnEdit('@item.ServiceProviderID')">Edit</a>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#sdj_@item.ServiceProviderID">
+                        Details
+                    </button>
+                    <div class="modal fade" id="sdj_@item.ServiceProviderID" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">@item.ServiceProviderName</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    ServiceProviderID: @item.OfficeId<br>
+                                    ServiceProviderID: @item.ServiceProviderID<br>
+                                    ServiceProviderName: @item.ServiceProviderName<br>
+                                    ServiceProviderAddress: @item.ServiceProviderAddress<br>
+                                    ServiceProviderPhone: @item.ServiceProviderPhone<br>
+                                    ServiceProviderEmail: @item.ServiceProviderEmail<br>
+                                    ServiceProviderFacebookLink: @item.ServiceProviderFacebookLink<br>
+                                    ServiceProviderViber: @item.ServiceProviderViber<br>
+                                    ServiceProviderWhatsapp: @item.ServiceProviderWhatsapp<br>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="btn btn-danger" onclick="return fnDelete('@item.ServiceProviderID')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

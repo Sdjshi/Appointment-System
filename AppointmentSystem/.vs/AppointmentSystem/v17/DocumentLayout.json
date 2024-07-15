@@ -1,0 +1,447 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\appointment\\bookappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\appointment\\bookappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\service\\getservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\service\\getservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\dataaccesslayer\\servicedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\dataaccesslayer\\appointmentdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\appointment\\confirmappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\appointment\\confirmappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\appointment\\getallappointments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\appointment\\getallappointments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\appointment\\getmyappointments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\appointment\\getmyappointments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\dataaccesslayer\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\dataaccesslayer\\customerdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\dataaccesslayer\\serviceproviderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\dataaccesslayer\\slotdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\controllers\\slotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:controllers\\slotcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\service\\assignservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\service\\assignservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\models\\assignservicemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\slot\\assignslot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\slot\\assignslot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\slot\\assigndaytoserviceproviders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\slot\\assigndaytoserviceproviders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\service\\getassignedservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\service\\getassignedservice.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentsystem\\views\\slot\\getallslots.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C5FD9B29-7C84-4BE3-ADBC-452F8C6FC2E7}|AppointmentSystem.csproj|solutionrelative:views\\slot\\getallslots.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\interfaces\\iserviceproviderdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F3AE51-D533-47AB-B479-A05B36C4C058}|..\\AppointmentData\\AppointmentData.csproj|f:\\projects\\desktop projects\\appointment_system\\appointmentdata\\models\\assignslotmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetService.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Service\\GetService.cshtml",
+              "RelativeDocumentMoniker": "Views\\Service\\GetService.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Service\\GetService.cshtml",
+              "RelativeToolTip": "Views\\Service\\GetService.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGsAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookAppointment.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\BookAppointment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointment\\BookAppointment.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\BookAppointment.cshtml",
+              "RelativeToolTip": "Views\\Appointment\\BookAppointment.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AppointmentController.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "Controllers\\AppointmentController.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAIwD4AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConfirmAppointment.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\ConfirmAppointment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointment\\ConfirmAppointment.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\ConfirmAppointment.cshtml",
+              "RelativeToolTip": "Views\\Appointment\\ConfirmAppointment.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetAllAppointments.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\GetAllAppointments.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointment\\GetAllAppointments.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\GetAllAppointments.cshtml",
+              "RelativeToolTip": "Views\\Appointment\\GetAllAppointments.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetMyAppointments.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\GetMyAppointments.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointment\\GetMyAppointments.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\GetMyAppointments.cshtml",
+              "RelativeToolTip": "Views\\Appointment\\GetMyAppointments.cshtml",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Appointment\\Index.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Appointment\\Index.cshtml",
+              "RelativeToolTip": "Views\\Appointment\\Index.cshtml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADEAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppointmentDAL.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\AppointmentDAL.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\DataAccessLayer\\AppointmentDAL.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\AppointmentDAL.cs",
+              "RelativeToolTip": "..\\AppointmentData\\DataAccessLayer\\AppointmentDAL.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAAAFoAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ServiceDAL.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\ServiceDAL.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\DataAccessLayer\\ServiceDAL.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\ServiceDAL.cs",
+              "RelativeToolTip": "..\\AppointmentData\\DataAccessLayer\\ServiceDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountDAL.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\AccountDAL.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\DataAccessLayer\\AccountDAL.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\AccountDAL.cs",
+              "RelativeToolTip": "..\\AppointmentData\\DataAccessLayer\\AccountDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Models\\Appointment.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\Models\\Appointment.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Models\\Appointment.cs",
+              "RelativeToolTip": "..\\AppointmentData\\Models\\Appointment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Account.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\Models\\Account.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Models\\Account.cs",
+              "RelativeToolTip": "..\\AppointmentData\\Models\\Account.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CustomerDAL.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\CustomerDAL.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\DataAccessLayer\\CustomerDAL.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\CustomerDAL.cs",
+              "RelativeToolTip": "..\\AppointmentData\\DataAccessLayer\\CustomerDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-08T11:31:34.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AssignServiceModel.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Models\\AssignServiceModel.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\Models\\AssignServiceModel.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Models\\AssignServiceModel.cs",
+              "RelativeToolTip": "..\\AppointmentData\\Models\\AssignServiceModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AssignService.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Service\\AssignService.cshtml",
+              "RelativeDocumentMoniker": "Views\\Service\\AssignService.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Service\\AssignService.cshtml",
+              "RelativeToolTip": "Views\\Service\\AssignService.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.976Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ServiceProviderDAL.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\ServiceProviderDAL.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\DataAccessLayer\\ServiceProviderDAL.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\ServiceProviderDAL.cs",
+              "RelativeToolTip": "..\\AppointmentData\\DataAccessLayer\\ServiceProviderDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SlotDAL.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\SlotDAL.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\DataAccessLayer\\SlotDAL.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\DataAccessLayer\\SlotDAL.cs",
+              "RelativeToolTip": "..\\AppointmentData\\DataAccessLayer\\SlotDAL.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAMkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AssignDayToServiceProviders.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Slot\\AssignDayToServiceProviders.cshtml",
+              "RelativeDocumentMoniker": "Views\\Slot\\AssignDayToServiceProviders.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Slot\\AssignDayToServiceProviders.cshtml",
+              "RelativeToolTip": "Views\\Slot\\AssignDayToServiceProviders.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SlotController.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Controllers\\SlotController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SlotController.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Controllers\\SlotController.cs",
+              "RelativeToolTip": "Controllers\\SlotController.cs",
+              "ViewState": "AQIAAI4AAAAAAAAAAAAlwJsAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:34.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AssignSlot.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Slot\\AssignSlot.cshtml",
+              "RelativeDocumentMoniker": "Views\\Slot\\AssignSlot.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Slot\\AssignSlot.cshtml",
+              "RelativeToolTip": "Views\\Slot\\AssignSlot.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GetAssignedService.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Service\\GetAssignedService.cshtml",
+              "RelativeDocumentMoniker": "Views\\Service\\GetAssignedService.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Service\\GetAssignedService.cshtml",
+              "RelativeToolTip": "Views\\Service\\GetAssignedService.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAD4vyIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:34.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GetAllSlots.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Slot\\GetAllSlots.cshtml",
+              "RelativeDocumentMoniker": "Views\\Slot\\GetAllSlots.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Slot\\GetAllSlots.cshtml",
+              "RelativeToolTip": "Views\\Slot\\GetAllSlots.cshtml",
+              "ViewState": "AQIAAJYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IServiceProviderDAL.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Interfaces\\IServiceProviderDAL.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\Interfaces\\IServiceProviderDAL.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Interfaces\\IServiceProviderDAL.cs",
+              "RelativeToolTip": "..\\AppointmentData\\Interfaces\\IServiceProviderDAL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:35.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AssignSlotModel.cs",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Models\\AssignSlotModel.cs",
+              "RelativeDocumentMoniker": "..\\AppointmentData\\Models\\AssignSlotModel.cs",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentData\\Models\\AssignSlotModel.cs",
+              "RelativeToolTip": "..\\AppointmentData\\Models\\AssignSlotModel.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-08T11:31:35.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "F:\\Projects\\Desktop Projects\\Appointment_System\\AppointmentSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAYwIsAAAB4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-08T11:31:35.013Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

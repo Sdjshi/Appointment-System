@@ -1,0 +1,140 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] Portal</title>
+    @*<link href="~/css/site.css" rel="stylesheet" />*@
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+            padding-top: 56px; /* Height of navbar */
+            background-color: #1E293B;
+            width: 220px; /* Adjust the width as needed */
+            overflow-x: hidden;
+            overflow-y: auto; /* Enable scrolling if the content is too long */
+            transition: width 0.3s;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            /* Width of sidebar */
+            right: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        #content {
+            margin-left: 220px; /* Same as the width of the sidebar */
+            transition: margin-left 0.3s;
+        }
+
+        #sidebar.active {
+            width: 60px; /* Collapsed width */
+        }
+
+        #content.active {
+            margin-left: 60px; /* Adjust margin when sidebar is collapsed */
+        }
+
+        .collapse-button {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #sidebar .nav-link {
+            color: white;
+        }
+
+        #sidebar.active + .navbar {
+            left: 60px; /* Adjust left position when sidebar is collapsed */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" onclick="toggleSidebar()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <div id="sidebar" class=" sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <!-- Collapse button -->
+                <li class="nav-item collapse-button">
+                    <button class="btn btn-link" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+
+                <!-- Sidebar links -->
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Service" asp-action="GetService">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="ServiceProvider" asp-action="GetServiceProviders">Service Providers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Customer" asp-action="GetAllCustomer">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Slot" asp-action="GetAllSlots">Slots</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Slot" asp-action="AssignSlot">Assign Slot</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Service" asp-action="AssignService">Assign Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Appointment" asp-action="Index">Book Appointment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Appointment" asp-action="GetAllAppointments">Get Booked Appointments</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content" class="container-fluid">
+        @* Display alert message if present *@
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div id="alertMessage" class="alert alert-info" role="alert">
+                @ViewBag.Message
+            </div>
+        }
+
+        <div class="container">
+            <h1 class="display-4"></h1>
+
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        // Toggle sidebar function
+        function toggleSidebar() {
+            $('#sidebar').toggleClass('active');
+            $('#content').toggleClass('active');
+        }
+    </script>
+</body>
+</html>

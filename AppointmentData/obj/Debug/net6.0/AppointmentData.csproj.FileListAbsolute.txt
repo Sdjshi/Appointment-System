@@ -1,0 +1,24 @@
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\bin\Debug\net6.0\AppointmentData.deps.json
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\bin\Debug\net6.0\AppointmentData.dll
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\bin\Debug\net6.0\AppointmentData.pdb
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.csproj.AssemblyReference.cache
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.AssemblyInfoInputs.cache
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.AssemblyInfo.cs
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.csproj.CoreCompileInputs.cache
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.dll
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\refint\AppointmentData.dll
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.pdb
+C:\Users\sdjsh\OneDrive\Desktop\Appointment_System\AppointmentData\obj\Debug\net6.0\ref\AppointmentData.dll
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\bin\Debug\net6.0\AppointmentData.deps.json
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\bin\Debug\net6.0\AppointmentData.dll
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\bin\Debug\net6.0\AppointmentData.pdb
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.csproj.AssemblyReference.cache
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.AssemblyInfoInputs.cache
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.AssemblyInfo.cs
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.csproj.CoreCompileInputs.cache
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.dll
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\refint\AppointmentData.dll
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\AppointmentData.pdb
+F:\Projects\Desktop Projects\Appointment_System\AppointmentData\obj\Debug\net6.0\ref\AppointmentData.dll

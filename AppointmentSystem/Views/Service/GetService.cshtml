@@ -1,0 +1,311 @@
+﻿
+@model IEnumerable<AppointmentData.Models.Service>
+
+@{
+    ViewData["Title"] = "Services";
+}
+<script src="~/js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#dvshow").click(function () {
+            $("#dvCreate").show();
+            $("#dvshow").hide();
+        });
+
+        $("#dvhideAdd").click(function () {
+            $("#dvCreate").hide();
+            $("#dvshow").show();
+        });
+
+        $("#dvhideEdit").click(function () {
+            $("#dvEdit").hide();
+            $("#dvshow").show();
+        });
+    });
+
+    function fnSaveData() {
+       
+        $.ajax({
+            type: "POST",
+            url: '/Service/CreateService',
+            data: {
+                'ServiceID': $("#txtServiceID_Add").val(),
+                'ServiceName': $("#txtServiceName_Add").val(),
+                'Description': $("#txtDescription_Add").val(),
+                'Duration': $("#txtDuration_Add").val(),
+                'MSP': $("#txtMSP_Add").val(),
+                'MRP': $("#txtMRP_Add").val(),
+                'OfficeId': $("#txtOfficeId_Add").val(),
+            },
+            success: function (response) {
+                $("#dvCreate").hide();
+                $("#dvshow").hide();
+                location.reload(true);
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnEditService() {
+      
+        $.ajax({
+            type: "POST",
+            url: '/Service/EditService',
+            data: {
+                'ServiceID': $("#txtServiceID_Edit").val(),
+                'ServiceName': $("#txtServiceName_Edit").val(),
+                'Description': $("#txtDescription_Edit").val(),
+                'Duration': $("#txtDuration_Edit").val(),
+                'MSP': $("#txtMSP_Edit").val(),
+                'MRP': $("#txtMRP_Edit").val(),
+
+            },
+            success: function (response) {
+                $("#dvEdit").hide();
+                $("#dvshow").hide();
+                location.reload(true);
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnEdit(ServiceID) {
+        console.log('Deleting item with Id:', ServiceID);
+        $.ajax({
+            type: "POST",
+            url: '/Service/GetDetailsById',
+            data: {
+                'ServiceID': ServiceID
+            },
+            success: function (response) {
+                $("#dvEdit").show();
+                $("#dvshow").hide();
+                $("#txtServiceID_Edit").val(response.serviceID);
+                $("#txtServiceName_Edit").val(response.serviceName);
+                $("#txtDescription_Edit").val(response.description);
+                $("#txtDuration_Edit").val(response.duration);
+                $("#txtMSP_Edit").val(response.msp);
+                $("#txtMRP_Edit").val(response.mrp);
+                $("#txtCreatedDate_Edit").val(response.createdDate);
+                $("#txtModifiedDate_Edit").val(response.modifiesDate);
+                $("#txtOfficeId_Edit").val(response.officeId);
+
+            },
+            error: function (req, status, error) { }
+        });
+    }
+
+    function fnDelete(ServiceID) {
+        console.log('Deleting item with Id:', ServiceID);
+        $.ajax({
+            type: "POST",
+            url: '/Service/StatusDeleteService',
+            data: {
+                'ServiceID': ServiceID
+            },
+            success: function (response) {
+                location.reload(true);
+            },
+            error: function (req, status, error) { }
+        });
+    }
+</script>
+
+<h1>Services Index</h1>
+<a href="javascript:void(0)" id="dvshow" class="btn btn-primary">Add Service</a>
+
+<div id="dvEdit" style="display:none">
+    <div class="container">
+        <input type="datetime" id="txtCreatedDate_Edit" class="form-control" hidden />
+        <input type="datetime" id="txtModifiedDate_Edit" class="form-control" hidden />
+        <div class="row mb-3">
+            <div class="col-md-3">OfficeId</div>
+            <div class="col-md-9">
+                <input type="number" id="txtOfficeId_Edit" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceID</div>
+            <div class="col-md-9">
+                <input type="number" id="txtServiceID_Edit" class="form-control" readonly />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceName</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceName_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Description</div>
+            <div class="col-md-9">
+                <input type="text" id="txtDescription_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Duration</div>
+            <div class="col-md-9">
+                <input type="number" id="txtDuration_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">MSP</div>
+            <div class="col-md-9">
+                <input type="number" id="txtMSP_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">MRP</div>
+            <div class="col-md-9">
+                <input type="number" id="txtMRP_Edit" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <input type="submit" value="Update" onclick="fnEditService()" class="btn btn-warning" />
+                <a href="javascript:void(0)" id="dvhideEdit" class="btn btn-danger">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvCreate" style="display:none">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-md-3">OfficeId</div>
+            <div class="col-md-9">
+                <input type="number" id="txtOfficeId_Add" class="form-control"  />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceID</div>
+            <div class="col-md-9">
+                <input type="number" id="txtServiceID_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">ServiceName</div>
+            <div class="col-md-9">
+                <input type="text" id="txtServiceName_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Description</div>
+            <div class="col-md-9">
+                <input type="text" id="txtDescription_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">Duration</div>
+            <div class="col-md-9">
+                <input type="number" id="txtDuration_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">MSP</div>
+            <div class="col-md-9">
+                <input type="number" id="txtMSP_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3">MRP</div>
+            <div class="col-md-9">
+                <input type="number" id="txtMRP_Add" class="form-control" />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <input type="submit" value="Save" onclick="fnSaveData()" class="btn btn-primary" />
+                <a href="javascript:void(0)" id="dvhideAdd" class="btn btn-danger">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OfficeId)
+            </th>
+            <th>
+                Code
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+               Description
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+               MSP
+            </th>
+            <th>
+                MRP
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OfficeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MSP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MRP)
+                </td>
+                <td>
+                    <a href="javascript:void(0)" class="btn btn-secondary" onclick="return fnEdit('@item.ServiceID')">Edit</a>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#sdj_@item.ServiceID">
+                        Details
+                    </button>
+                    <div class="modal fade" id="sdj_@item.ServiceID" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">@item.ServiceName</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ServiceProviderID: @item.OfficeId<br>
+                                    ServiceID: @item.ServiceID<br>
+                                    ServiceName: @item.ServiceName<br>
+                                    Description: @item.Description<br>
+                                    Duration: @item.Duration<br>
+                                    MSP: @item.MSP<br>
+                                    MRP: @item.MRP<br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="btn btn-danger" onclick="return fnDelete('@item.ServiceID')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

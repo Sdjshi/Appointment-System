@@ -1,0 +1,87 @@
+﻿@model IEnumerable<AppointmentData.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Booked Appointments";
+}
+
+<h1>Booked Appointments</h1>
+<script type="text/javascript">
+    function fnDelete(AppointmentDate,AppointmentTime) {
+        console.log('Deleting Appointment with Date:', AppointmentDate);
+        console.log('Deleting Appointment with Time:', AppointmentTime);
+        $.ajax({
+            type: "POST",
+            url: '/Appointment/StatusCancelAppointment',
+            data: {
+                'AppointmentDate': AppointmentDate,
+                'AppointmentTime': AppointmentTime
+            },
+            success: function (response) {
+                location.reload(true);
+            },
+            error: function (req, status, error) { }
+        });
+    }
+</script>
+
+<table class="table">
+    <thead>
+        <tr>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceProviderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentTime)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerPhone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ServiceProviderName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentDate)
+                   
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentTime)
+                </td>
+
+                <td>
+                    <a href="javascript:void(0)" class="btn btn-danger" onclick="return fnDelete('@item.AppointmentDate', '@item.AppointmentTime')">Cancel</a>
+                </td>
+                <td>
+                    <a href="javascript:void(0)" class="btn btn-success" onclick="return fnDelete('@item.AppointmentDate', '@item.AppointmentTime')">Complete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
